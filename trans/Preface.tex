@@ -1,0 +1,41 @@
+\chapter*{前言}
+本书是十卷系列丛书{\it The Art of Computational Science（计算科学的艺术）}前三卷的初稿。我们决定在网上发布初稿，读者可以运行其中的代码，从而我们可以及早得到关于本系列作品的反馈。
+
+\section*{计算科学的艺术}
+《计算科学的艺术》系列丛书手把手地指导学生建立自己的计算实验室、进行前沿研究。它的内容是自洽的：高中生可以从第1页开始逐步进行到最后。
+
+用一套教材讲完让学生进行科研的内容（通常是从大一到研一的五年课程），看起来似乎不太可能。我们在这里提供一条捷径，但并非替代传统课程。一个有志钻研的高中或本科生可以拿出一个暑假来自学（能找到志同道合的靠谱队友共同学习更好，\sout{当然，首先……}）这本书。经过学习，你会很快学到独立研究的思想与做法。无论最终从事什么职业，这种经历与思想都是无价的。
+
+很多自然科学的入门教材通常仅仅给出只有亲身经历才能体会到的、高度精炼过的结论。即使习题与解答包含了一些细节，它们仍然省略了人们解决问题、误入歧途等等实际经历。研究过程$90\%$都在犯错（甚至更多），只有（小于等于）$10\%$的原创性的新内容。学习过程也一样，在解题中，我们并非从习题答案获得知识，而是通过学习在求解过程中怎样不犯错来获得。
+
+当然，那些教材的做法是有理由的。如果把解决问题中可能犯的所有（或者大部分）错误都写进书里，那么篇幅会膨胀十倍。因此，大部分教材只提供课程的核心内容与参考资料也合情合理，有天赋的学生、以及有一定基础的学生可以自行学习解决研究过程的问题。
+
+然而我们认为还是应该有不同讲法的教材（据我们所知还没有）。本书试着以三位学生的学习经历为主线，有时穿插教师的指导。教材内容以对话为形式，在其中会自然发现遇到的问题，以及他们是怎样或早或晚发现解决问题与误区的。
+
+用仅仅十卷篇幅写完五年的课程还是很难，我们的解决方案是选择一个我们认为最简单的（尚未解决的）科学问题。实际上，最古老的未解之题——从Newton建立数学与物理的基础的时代就出现了——是引力多体问题，即一组天体在它们彼此的引力相互作用下的运动问题。
+
+月球绕地球、或者地球绕太阳运动是两体问题的典型例子。典型的三体问题是将地球、月球和太阳综合考虑，研究月球绕地球的运动受太阳的扰动。太阳与八大行星（从水星到海王星）组成一个9体问题。一个富恒星团（例如M15或47 Tuc）的运动是百万量级的多体问题。人类的银河系或者邻近的仙女座星系(the Andromeda galaxy)可以用数十亿量级的多体问题建模。
+
+选定了这个相对容易的研究课题后，进一步的内容是介绍力的概念、万有引力公式、微分方程及其数值近似解，这些在第1卷讲述。第2卷的主题是亲自动手模拟二体及三体的运动，到了第3卷则进化到32体系统（作为恒星团的一种模型）。这本书是三卷的初稿，大部分引导性的内容尚未写入；我们打算在之后几年完成。
+
+第4卷介绍模拟大量粒子的重要概念——individual time steps，同时也着眼于一些计算机科学的技术细节，例如简要介绍自描述的可变数据格式(self-describing flexible data formats)、C++中的类、XML数据的输入/输出，更多更复杂的命令行参数等等。我们会看到如何用这些方法构造健壮又灵活的模块，并且可以随着科学模拟种类的发展变化而增加新的功能。那里会用到这些工具来模拟一个256体系统。
+
+第5卷引入大型系统模拟的最后一个重要部分——紧密双星的特殊处理。有了这个方法，我们可以模拟2048体系统（each increase of a factor eight in 3D doubles the number of particles in each spatial dimension）。我们还将研究它的一些应用，例如核塌缩，其中会发现还需要引入额外内容，例如三星系统的特殊处理。
+
+Volume 6 will introduce a diversion: it will focus on three-body scattering experiments. Just as high-energy particle accelerators probe the behavior of subatomic particles, we can probe the complex interactions between single stars and double stars in the virtual
+laboratory of the computer, by sending ‘beams’ of single stars to (gravitationally) crash into ‘target plates’ of double stars. These experiments are useful to predict and analyse the ‘microscopic’ processes that happen within a star cluster scales small with respect to that of the cluster as a whole.
+
+Volume 7 will continue the scattering treatment, but will handle the scattering of two double stars off each other, as well as the scattering of doubles and triples, and even more complex varieties, all of which occur within a large-scale simulation of a dense stellar system. As we will see, the automatization of such experiments, together with the automated reporting of the many different outcomes, will provide quite a challenge.
+
+Volume 8 will pick up the main line of our series, the development of N-body codes with increasing sophistication (for historical reasons, the gravitional many-body problem is often called the N-body problem). This time we will start from scratch, using all the experience we have collected in volumes 1 through 7, by making a top-down design in terms of modules, while giving a complete specification of the interfaces between all these modules. This approach will allow us to mix and match different pieces written by different people, using different computer languages, and even adding different physical effects.
+
+Volume 9 will continue this quest, by showing how such a code can be made to deal with the challenge of following close encounters, as well as tight double stars. Here we will learn to deal with various types of special treatments of neighboring particles, which is the main reasons that state-of-the-art N-body codes have grown so bulky. We will apply this
+code to some 16k-body systems.
+
+Volume 10 will wrap us the quest, by introducing a way to handle even collisions between stars, through simple forms of hydrodynamics and stellar evolution. Depending on the speed of computers by the time we finish our series, we may be able to illustrate our code by taking two more steps of two in each dimension, leading us to the 128k-body
+system as well as the million-body system.
+
+\section*{极限科研}
+我们希望打破研究与教育间的障碍。从教学的角度看，本书的内容相当奇怪：从最基本的内容出发讲到了研究前沿。从科研的角度，本书体现出详细的文档是如何促进研究的。用更激进的话说：我们相信教育是科研成功的关键。
+
+为了表达这些思想，我们仿照{\it 极限编程 (extreme programming)}——一种针对频繁测试、快速周转的编程方法论，提出了{\it 极限科研 (extreme research)}的概念，
